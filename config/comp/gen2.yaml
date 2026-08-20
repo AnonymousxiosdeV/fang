@@ -821,6 +821,8 @@ button:
     on_press:
       - uart.write: "SetButton down \n"
       - delay: 1250ms
+      - uart.write: "SetButton down \n"
+      - delay: 1250ms
       - uart.write: "SetButton soft \n"
 
   - platform: template
