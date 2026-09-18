@@ -518,8 +518,8 @@ text:
     set_action:
       lambda: !lambda |-
         id(timezone_text).publish_state(x.c_str()); // update this text component
-        id(g_timezone) = std::string(x.c_str()); // store tz in global
-        id(nbs_time).set_timezone(x.c_str()); // set timezone for time
+        // id(g_timezone) = std::string(x.c_str()); // store tz in global
+        // id(nbs_time).set_timezone(x.c_str()); // set timezone for time
         ESP_LOGI("timezone", "Timezone set to: %s", x.c_str()); // log
 
 
