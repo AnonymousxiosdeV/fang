@@ -38,13 +38,6 @@ esphome:
         - lambda: !lambda |-
             id(uiState).publish_state("Starting...");
 
-           // Update nbs_time and text entity from persisted global
-          // if (!id(g_timezone).empty()) {
-          // id(nbs_time).set_timezone(id(g_timezone).c_str());
-          //  id(timezone_text).publish_state(id(g_timezone).c_str());
-          // ESP_LOGI("timezone", "Restored timezone: %s", id(g_timezone).c_str());
-          //   }
-
             char buf[40];
             snprintf(
               buf, sizeof(buf),
