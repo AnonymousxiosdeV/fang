@@ -53,7 +53,17 @@ esphome:
             );
 
             id(scheduleset).publish_state(buf);
-
+          
+light:
+  - platform: esp32_rmt_led_strip
+    id: onboard_rgb
+    name: "Onboard RGB LED"
+    pin: GPIO02       # ← replace XX with the correct GPIO from your board
+    num_leds: 1
+    chipset: WS2812
+    rgb_order: GRB
+    restore_mode: ALWAYS_OFF
+    
 
 script:
   # Valid motor samples restart the watchdog, even if the ESP stays connected
