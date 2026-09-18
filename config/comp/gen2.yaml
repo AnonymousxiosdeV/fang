@@ -950,6 +950,10 @@ button:
     name: "Send to start"
     icon: mdi:home
     on_press:
+      - uart.write: "SetButton start \n"
+      - delay: 1250ms
+      - uart.write: "SetButton down \n"
+      - delay: 1250ms
       - uart.write: "SetButton down \n"
       - delay: 1250ms
       - uart.write: "SetButton soft \n"
