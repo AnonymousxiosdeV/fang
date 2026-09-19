@@ -54,15 +54,17 @@ esphome:
 
             id(scheduleset).publish_state(buf);
           
+output:
+  - platform: gpio
+    id: output_gpio_led
+    pin: GPIO2
+
 light:
-  - platform: esp32_rmt_led_strip
-    id: onboard_rgb
-    name: "Onboard RGB LED"
-    pin: GPIO02       # ← replace XX with the correct GPIO from your board
-    num_leds: 1
-    chipset: WS2812
-    rgb_order: GRB
-    restore_mode: ALWAYS_OFF
+  - platform: binary
+    name: Binary Light
+    id: light_binary_1
+    output: output_gpio_led
+    restore_mode: RESTORE_DEFAULT_OFF
     
 
 script:
